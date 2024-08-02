@@ -20,4 +20,13 @@ void pirISR()
 {
   state = !state; //each time its called state will change to on or off, basically on when motion off when no more
   digitalWrite(LED_PIN, state); //sets led to the new state
+  
+  if (state == HIGH)
+  {
+    Serial.println("motion detected, led on");
+  }
+  else
+  {
+    Serial.println("motion not detected, led off");
+  }
 }
